@@ -13,6 +13,8 @@ namespace UI
 {
     public partial class FormWelcome : Form
     {
+        private const string k_AppID = "189097148095083";
+        private static readonly string[] permissions = { "user_about_me" };
         public FormWelcome()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace UI
 
         private void loginAndInit()
         {
-            LoginResult result = FacebookService.Login
+            LoginResult result = FacebookService.Login(k_AppID, permissions);
         }
     }
 }
